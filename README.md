@@ -17,4 +17,5 @@ Which adds this field to the invoice;
 HS-codes can be accessed via the `hs_code` field in the `products` end-point.
 
 ## Tested on versions:
+If a PrestaShop version is not in this table, it means it has not been tested yet.
 <table><thead><trow><th>Version</th><th>Tested</th></trow></thead><tbody><tr><td>8.2</td><td>✅</td></tr></tbody></table>
