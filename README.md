@@ -9,6 +9,7 @@ HS-codes are also passed as Smarty variables and are accessible in the invoice t
 The HS-code can be accessed from an associative array, indexed by the `product_id` to which it corresponds: `$order_invoice->hs_codes[$order_detail['id_product']]`.
 For example, you could add the following in the file `pdf/invoice.product-tab.tpl`; 
 <img width="818" height="71" alt="image" src="https://github.com/user-attachments/assets/680ecd5a-fd5d-45ad-bb10-1a998ad259ff" />
+
 Which adds this field to the invoice;
 <img width="982" height="149" alt="HS-code on invoice" src="https://github.com/user-attachments/assets/835e75be-e696-487a-b941-7d03adad7f1e" />
 
