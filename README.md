@@ -16,3 +16,5 @@ Which adds this field to the invoice;
 ### HS-code via the webservice
 HS-codes can be accessed via the `hs_code` field in the `products` end-point.
 
+## Tested on versions:
+<table><thead><trow><th>Version</th><th>Tested</th></trow></thead><tbody><tr><td>8.2</td><td>✅</td></tr></tbody></table>
