@@ -29,14 +29,14 @@ class HB_Hscode extends Module
         $this->need_instance = 0;
         $this->ps_versions_compliancy = [
             'min' => '1.6.0',
-            'max' => _PS_VERSION_,
+            'max' => '8.2.9999',
         ];
         $this->bootstrap = true;
 
         parent::__construct();
 
-        $this->displayName = $this->l('hb_hscode');
-        $this->description = $this->l('hb_hscode');
+        $this->displayName = $this->l('HS Codes');
+        $this->description = $this->l('Manage HS Codes for products.');
 
         $this->confirmUninstall = $this->l('Are you sure you want to uninstall?');
         if (!Configuration::get('MYMODULE_NAME')) {
