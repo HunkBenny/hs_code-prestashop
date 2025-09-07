@@ -1,0 +1,17 @@
+{
+  "name": "prestashop/hb_hscode",
+  "authors": [
+    {
+      "name": "Hunkbenny"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "PrestaShop\\Module\\HB_Hscode\\": "src/"
+    },
+    "config": {
+      "prepend-autoloader": false
+    },
+    "type": "prestashop-module"
+  }
+}

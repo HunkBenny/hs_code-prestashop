@@ -1,0 +1,32 @@
+# https://devdocs.prestashop.com/8/modules/concepts/services/
+services:
+    hb_product_hs_code_repository:
+        autowire: true
+        public: true
+        class: PrestaShop\Module\HB_Hscode\Repository\ProductHSCodeRepository
+        arguments:
+            $connection: '@doctrine.dbal.default_connection'
+            $registry: '@doctrine'
+            $database_prefix: '%database_prefix%'
+
+    PrestaShop\Module\HB_Hscode\Form\Modifier\ProductFormModifier:
+        autowire: true
+        public: true
+        arguments:
+            $formBuilderModifier: '@form.form_builder_modifier'
+            $repository: '@hb_product_hs_code_repository'
+
+    PrestaShop\Module\HB_Hscode\CQRS\CommandHandler\UpdateProductHSCodeCommandHandler:
+        class: PrestaShop\Module\HB_Hscode\CQRS\CommandHandler\UpdateProductHSCodeCommandHandler
+        tags:
+            - name: tactician.handler
+              command: PrestaShop\Module\HB_Hscode\CQRS\Command\UpdateProductHSCodeCommand
+
+    PrestaShop\Module\HB_Hscode\CQRS\CommandBuilder\ProductHSCodeCommandsBuilder:
+        class: PrestaShop\Module\HB_Hscode\CQRS\CommandBuilder\ProductHSCodeCommandsBuilder
+        # This tag is important. Core product command builder finds this builder by the tag
+        tags: ['core.product_command_builder']
+
+
+    PrestaShop\Module\HB_Hscode\Entity\HbProductHSCode:
+        class: PrestaShop\Module\HB_Hscode\Entity\HbProductHSCode
