@@ -187,11 +187,17 @@ class HB_Hscode extends Module
 
         /** @var ProductHSCodeRepository $repository */
         $repository = $this->get('hb_product_hs_code_repository');
-        $product = $repository->find($product_id);
-        if ($product) {
+        $product = $repository->find($product_id); 
+        if ($product === null) {
+            // If it does not exist, create a new one
+            $product = new HbProductHSCode();
+            $product->setIdProduct($product_id)->setHsCode($hs_code);
+            $repository->add($product);
+        } else {
             $product->setHsCode($hs_code);
             $repository->flush();
         }
+        
     }
 
     public function getHsCode(int $id_product): ?string
