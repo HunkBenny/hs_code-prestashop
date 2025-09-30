@@ -1,5 +1,5 @@
 ## Description
-This plugin adds HS-code functionalities to Prestashop. It adds a new database table where the HS-code is stored.
+This plugin adds HS-code functionalities to Prestashop. It adds a new database table where the HS-code is stored. Where possible, overrides are avoided.
 
 HS-codes can be set from the Backoffice: <img width="1388" height="297" alt="image" src="https://github.com/user-attachments/assets/c0c76dc6-0441-45e8-a350-3304b53fc245" />
 Or via the webservice, using the `products`-endpoint.
@@ -14,7 +14,10 @@ Which adds this field to the invoice;
 <img width="982" height="149" alt="HS-code on invoice" src="https://github.com/user-attachments/assets/835e75be-e696-487a-b941-7d03adad7f1e" />
 
 ### HS-code via the webservice
-HS-codes can be accessed via the `hs_code` field in the `products` end-point.
+HS-codes can be accessed via the `hs_code` field in the `products` end-point. Unfortunately, no hooks exist in PrestaShop that allow us to extend **existing** endpoints. So, for the webservice to work, an override is added.
+
+## Installation:
+Under `versions` you can download the latest version. Simply drag-and-drop this zip-file in the module section of your e-commerce store.
 
 ## Tested on versions:
 If a PrestaShop version is not in this table, it means it has not been tested yet.
