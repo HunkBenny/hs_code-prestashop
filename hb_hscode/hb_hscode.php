@@ -145,11 +145,8 @@ class HB_Hscode extends Module
     {
         $new_table_name = _DB_PREFIX_ . 'hb_product_hscode';
         $sql = 'INSERT IGNORE INTO ' . $new_table_name . ' (id_product, hs_code)
-        VALUES ' . $this->create_tuple_hscode($id_product, $hs_code) . ';';
-        $sql .= 'UPDATE ' . $new_table_name . ' 
-        SET hs_code = ' . $hs_code . ' 
-        WHERE id_product = ' . $id_product . ';';
-        PrestaShopLogger::addLog($sql);
+            VALUES ' . $this->create_tuple_hscode($id_product, $hs_code) . '
+            ON DUPLICATE KEY UPDATE hs_code = ' . $hs_code . ';';
         Db::getInstance()->execute($sql);
     }
 
