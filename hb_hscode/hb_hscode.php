@@ -13,9 +13,6 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-// if (file_exists(__DIR__ . '/src/entity/HbProductHSCode.php')) {
-//     require_once __DIR__ . '/src/entity/HbProductHSCode.php';
-// }
 
 class HB_Hscode extends Module
 {
