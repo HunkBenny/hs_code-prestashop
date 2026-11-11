@@ -13,6 +13,8 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
+require_once __DIR__ . '/vendor/autoload.php';
+
 
 class HB_Hscode extends Module
 {
@@ -21,12 +23,12 @@ class HB_Hscode extends Module
     {
         $this->name = 'hb_hscode';
         $this->tab = 'administration';
-        $this->version = '1.0.0';
+        $this->version = '1.1.0';
         $this->author = 'HunkBenny ';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = [
             'min' => '1.6.0',
-            'max' => '8.2.9999',
+            'max' => '9.1.9999',
         ];
         $this->bootstrap = true;
 
