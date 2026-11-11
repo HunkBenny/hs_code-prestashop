@@ -23,7 +23,7 @@ class HB_Hscode extends Module
     {
         $this->name = 'hb_hscode';
         $this->tab = 'administration';
-        $this->version = '1.1.0';
+        $this->version = '1.2.0';
         $this->author = 'HunkBenny ';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = [
