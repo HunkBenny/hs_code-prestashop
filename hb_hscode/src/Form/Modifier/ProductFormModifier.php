@@ -7,6 +7,7 @@ namespace Prestashop\Module\HB_Hscode\Form\Modifier;
 
 use Product;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Validator\Constraints\Regex;
 use PrestaShop\PrestaShop\Core\Domain\Product\ValueObject\ProductId;
 use PrestaShopBundle\Form\FormBuilderModifier;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -86,6 +87,12 @@ final class ProductFormModifier
             ],
             'data' => $hs_code,
             'empty_data' => '',
+            'constraints' => [
+                new Regex([
+                    'pattern' => '/^[0-9]{6,12}$/',
+                    'message' => $this->translator->trans('HS code must be 6 to 12 digits.', [], 'Modules.HBHscode.Admin'),
+                ]),
+            ],
             'form_theme' => '@PrestaShop/Admin/TwigTemplateForm/prestashop_ui_kit_base.html.twig',
         ]
     );
